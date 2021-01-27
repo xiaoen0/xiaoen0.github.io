@@ -16,4 +16,18 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Hexo:NexT主题个性化配置</title>
+    <url>/2021/01/27/Hexo-NexT%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h3 id="背景使用彩带渲染"><a href="#背景使用彩带渲染" class="headerlink" title="背景使用彩带渲染"></a>背景使用彩带渲染</h3><!--<mark style = "background-color:#CDCDC1">主题配置文件</mark>-->
+<p>在主题配置文件中，进行如下修改：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Canvas-ribbon</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon</span></span><br><span class="line"><span class="comment"># size: The width of the ribbon.</span></span><br><span class="line"><span class="comment"># alpha: The transparency of the ribbon.</span></span><br><span class="line"><span class="comment"># zIndex: The display level of the ribbon.</span></span><br><span class="line">canvas_ribbon:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">vendors:</span><br><span class="line">  <span class="comment"># Internal version: 1.0.0</span></span><br><span class="line">  <span class="comment"># See: https://github.com/zproo/canvas-ribbon</span></span><br><span class="line">  <span class="comment"># Example:</span></span><br><span class="line">  canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>环境</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
 </search>
