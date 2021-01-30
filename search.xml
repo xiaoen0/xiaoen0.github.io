@@ -2,10 +2,29 @@
 <search>
   <entry>
     <title>Hexo:NexT主题个性化配置</title>
-    <url>/posts/1493449015/</url>
+    <url>/posts/1493449015.html</url>
     <content><![CDATA[<h3 id="背景使用彩带渲染"><a href="#背景使用彩带渲染" class="headerlink" title="背景使用彩带渲染"></a>背景使用彩带渲染</h3><!--<mark style = "background-color:#CDCDC1">主题配置文件</mark>-->
 <p>在主题配置文件中，进行如下修改：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Canvas-ribbon</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon</span></span><br><span class="line"><span class="comment"># size: The width of the ribbon.</span></span><br><span class="line"><span class="comment"># alpha: The transparency of the ribbon.</span></span><br><span class="line"><span class="comment"># zIndex: The display level of the ribbon.</span></span><br><span class="line">canvas_ribbon:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">vendors:</span><br><span class="line">  <span class="comment"># Internal version: 1.0.0</span></span><br><span class="line">  <span class="comment"># See: https://github.com/zproo/canvas-ribbon</span></span><br><span class="line">  <span class="comment"># Example:</span></span><br><span class="line">  canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Canvas-ribbon</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon</span></span><br><span class="line"><span class="comment"># size: The width of the ribbon.</span></span><br><span class="line"><span class="comment"># alpha: The transparency of the ribbon.</span></span><br><span class="line"><span class="comment"># zIndex: The display level of the ribbon.</span></span><br><span class="line">canvas_ribbon:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">vendors:</span><br><span class="line">  <span class="comment"># Internal version: 1.0.0</span></span><br><span class="line">  <span class="comment"># See: https://github.com/zproo/canvas-ribbon</span></span><br><span class="line">  <span class="comment"># Example:</span></span><br><span class="line">  canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<h3 id="链接持久化"><a href="#链接持久化" class="headerlink" title="链接持久化"></a>链接持久化</h3><p>Hexo默认的链接是http: //xxx(yourDomainName)/year/month/day/title 这种类型的。<br>这种默认的链接存在很多潜在的问题，比如：</p>
+<ul>
+<li>文章的title一般为中文，带有中文的url不利于SEO（搜索引擎优化）</li>
+<li>如果对文章的title进行了修改，会导致链接发生变化，不利于文章的推广</li>
+</ul>
+<p>基于默认链接存在的潜在问题，我们最好把标题转成唯一的英文或数字字符串。配置如下：</p>
+<p>1、安装插件hexo-abbrlink</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<p>2、在站点配置文件中添加abbrlink，并修改permalink</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">permalink: posts/:abbrlink/</span><br><span class="line"></span><br><span class="line"><span class="comment"># abbrlink config</span></span><br><span class="line">abbrlink:</span><br><span class="line">  alg: crc32  <span class="comment">#support crc16(default) and crc32</span></span><br><span class="line">  rep: dec    <span class="comment">#support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<p>其中：</p>
+<ul>
+<li>alg：算法。有crc16和crc32两种。</li>
+<li>rep：进制。有dec(十进制)和hex(十六进制)两种。</li>
+</ul>
+<p>注：<br>crc16算法下的十进制编码最大为65535，这对个人博客来说已足够用。</p>
+]]></content>
       <categories>
         <category>计算机</category>
         <category>环境</category>
@@ -16,7 +35,7 @@
   </entry>
   <entry>
     <title>VScode下进行markdown环境搭建</title>
-    <url>/posts/648754496/</url>
+    <url>/posts/648754496.html</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>计算机</category>
@@ -29,7 +48,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/posts/1243066710/</url>
+    <url>/posts/1243066710.html</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info.<br>If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a><br>or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <a id="more"></a>
 
