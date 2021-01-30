@@ -34,9 +34,21 @@
       </tags>
   </entry>
   <entry>
-    <title>VScode下进行markdown环境搭建</title>
-    <url>/posts/648754496.html</url>
-    <content><![CDATA[]]></content>
+    <title>VSCode下进行Markdown环境搭建</title>
+    <url>/posts/54b0646e.html</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>  &emsp;由于写博客经常要编写Markdown，所以选择一个好使的Markdown编辑器非常关键。Markdown编辑器有很多，看了网评之后，我选择了一款集程序猿所爱的VSCode。搭建好Markdown写作环境试了试，真的是没有辜负我的期望，写起文档来超级好用，大众的眼光还是雪亮滴~</p>
+<a id="more"></a>
+<h2 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h2><h3 id="下载VSCode并安装"><a href="#下载VSCode并安装" class="headerlink" title="下载VSCode并安装"></a>下载VSCode并安装</h3><p><a href="https://code.visualstudio.com/">下载VSCode</a>，傻瓜式安装。</p>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p>&emsp;点击左侧菜单栏切换到插件界面，然后在搜索框搜索要安装的插件，点击安装即可。<br>&emsp;以下是我安装的一些常用插件:  </p>
+<ul>
+<li><u>Markdown All in One</u>:&ensp;Markdown语言支持。 </li>
+<li><u>markdownlint</u>:&ensp;Markdown写作规范。</li>
+<li><u>Prettier</u>:&ensp;格式错误自动修复。</li>
+<li><u>Markdown Preview Enhanced</u>:&ensp;将原生Markdown预览的黑色背景改成白色。</li>
+<li><u>Markdown Preview Github Styling</u>:&ensp;Github风格的预览。</li>
+<li><u>Markdown PDF</u>:&ensp;以PDF或图片的形式导出Markdown。</li>
+</ul>
+]]></content>
       <categories>
         <category>计算机</category>
         <category>环境</category>
@@ -45,21 +57,5 @@
         <tag>Markdown</tag>
         <tag>VSCode</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/1243066710.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info.<br>If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a><br>or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<a id="more"></a>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
