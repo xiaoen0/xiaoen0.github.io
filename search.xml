@@ -16,11 +16,11 @@
 <li><u>Paste Image</u>:&ensp;从剪切板里粘贴图片到Markdown里。快捷键为Ctrl+Alt+V。</li>
 <li><u>Markdown PDF</u>:&ensp;以PDF或图片的形式导出Markdown。</li>
 </ul>
-<h2 id="一些细节展示"><a href="#一些细节展示" class="headerlink" title="一些细节展示"></a>一些细节展示</h2><h3 id="Paste-Image的配置"><a href="#Paste-Image的配置" class="headerlink" title="Paste Image的配置"></a>Paste Image的配置</h3><p><img src="/C:/Users/92458/AppData/Roaming/Typora/typora-user-images/image-20210131205254830.png" alt="image-20210131205254830"></p>
-<p><img src="/C:/Users/92458/AppData/Roaming/Typora/typora-user-images/image-20210131205352781.png" alt="image-20210131205352781"></p>
-<p><img src="/C:/Users/92458/AppData/Roaming/Typora/typora-user-images/image-20210131205421973.png" alt="image-20210131205421973"></p>
-<p><img src="/C:/Users/92458/AppData/Roaming/Typora/typora-user-images/image-20210131205452179.png" alt="image-20210131205452179"></p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>​    如果追求风格酷盖，VSCode写Markdown是个不错的选择；如果追求简单快捷，还是Typora优秀。</p>
+<h2 id="一些细节展示"><a href="#一些细节展示" class="headerlink" title="一些细节展示"></a>一些细节展示</h2><h3 id="Paste-Image的配置"><a href="#Paste-Image的配置" class="headerlink" title="Paste Image的配置"></a>Paste Image的配置</h3><p><img src="/images/image-20210131205254830.png" alt="image-20210131205254830"></p>
+<p><img src="/images/image-20210131205352781.png" alt="image-20210131205352781"></p>
+<p><img src="/images/image-20210131205421973.png" alt="image-20210131205421973"></p>
+<p><img src="/images/image-20210131205452179.png" alt="image-20210131205452179"></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>​      如果追求风格酷盖，VSCode写Markdown是个不错的选择；如果追求简单快捷，还是Typora优秀。</p>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -62,6 +62,30 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo:在Typora中插图片的正确打开方式</title>
+    <url>/posts/5e01ee03.html</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    在Typora中插入图片的方式非常简单，只需指定好路径就ok了~</p>
+<a id="more"></a>
+
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="建存储图片的文件夹"><a href="#建存储图片的文件夹" class="headerlink" title="建存储图片的文件夹"></a>建存储图片的文件夹</h3><p>​    在Hexo站点中的source目录下，建一个存储图片的文件夹，命名为images</p>
+<h3 id="配置根目录"><a href="#配置根目录" class="headerlink" title="配置根目录"></a>配置根目录</h3><p>​    在待插图片的md文档头部的配置项中，添加 typora-root-url: ../</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo:在Typora中插图片的正确打开方式</span><br><span class="line">tags:</span><br><span class="line">	- Hexo</span><br><span class="line">	- Typora</span><br><span class="line">categories:</span><br><span class="line">	-- 计算机</span><br><span class="line">	 - 环境</span><br><span class="line">date: 2021-01-31 21:15:10</span><br><span class="line">typora-root-url: ../</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>配置后，根目录为md文档所在目录的上一级目录，即source目录。</p>
+<h3 id="拖入图片并修改图片的url"><a href="#拖入图片并修改图片的url" class="headerlink" title="拖入图片并修改图片的url"></a>拖入图片并修改图片的url</h3><p>​    拖入图片，默认的url是本地的绝对路径。这时，点击图片右键 ——&gt; “复制图片到…”，选择source/images文件即可。</p>
+<p>​    图片的url会随之变成相应的相对路径。</p>
+<p>​    插入图片成功~</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>​    md文档中插入的图片能在Hexo站点中指定的路径中找到，当部署到github上时，博客中的图片自然也能正常被引用和显示。</p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>环境</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Typora</tag>
       </tags>
   </entry>
 </search>
