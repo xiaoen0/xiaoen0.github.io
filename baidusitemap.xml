@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://example.com/posts/5e01ee03.html</loc>
-    <lastmod>2021-01-31</lastmod>
+    <loc>http://example.com/posts/c19aac04.html</loc>
+    <lastmod>2021-03-14</lastmod>
   </url>
   <url>
     <loc>http://example.com/posts/54b0646e.html</loc>
+    <lastmod>2021-02-06</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/5e01ee03.html</loc>
     <lastmod>2021-01-31</lastmod>
   </url>
   <url>
