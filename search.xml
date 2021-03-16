@@ -127,4 +127,52 @@
         <tag>简单</tag>
       </tags>
   </entry>
+  <entry>
+    <title>30(简单)：包含min函数的栈</title>
+    <url>/posts/1eaa0f0b.html</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>30：<a href="https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/">包含min函数的栈</a></p>
+<blockquote>
+<p>定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数。在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。</p>
+</blockquote>
+<p>实例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">MinStack minStack = <span class="keyword">new</span> MinStack();</span><br><span class="line">minStack.push(-<span class="number">2</span>);</span><br><span class="line">minStack.push(<span class="number">0</span>);</span><br><span class="line">minStack.push(-<span class="number">3</span>);</span><br><span class="line">minStack.min();   --&gt; 返回 -<span class="number">3.</span></span><br><span class="line">minStack.pop();</span><br><span class="line">minStack.top();      --&gt; 返回 <span class="number">0.</span></span><br><span class="line">minStack.min();   --&gt; 返回 -<span class="number">2.</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="方案1：使用两个栈"><a href="#方案1：使用两个栈" class="headerlink" title="方案1：使用两个栈"></a>方案1：使用两个栈</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line">	<span class="comment">//声明两个栈</span></span><br><span class="line">	<span class="keyword">private</span> Stack&lt;Integer&gt; stack1,stack2;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="comment">//实例化栈</span></span><br><span class="line">    	stack1 = <span class="keyword">new</span> Stack&lt;&gt;();	</span><br><span class="line">    	stack2 = <span class="keyword">new</span> Stack&lt;&gt;();	<span class="comment">//辅助栈，栈顶元素是栈1的最小值</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//入栈</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    	stack1.push(x);</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">if</span>(stack2.isEmpty() || x&lt;=stack2.peek()) &#123;</span><br><span class="line">    		stack2.push(x);</span><br><span class="line">    	&#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//出栈</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">if</span>(stack1.peek().equals(stack2.peek())) &#123;</span><br><span class="line">    		stack1.pop();</span><br><span class="line">    		stack2.pop();</span><br><span class="line">    	&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    		stack1.pop();</span><br><span class="line">    	&#125; 	</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//栈顶元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">return</span> stack1.peek();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//栈中最小值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">min</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">return</span> stack2.peek();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//出栈</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">if</span>(stack1.pop().equals(stack2.peek())) &#123;</span><br><span class="line">    		stack2.pop();</span><br><span class="line">    	&#125;	</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><h3 id="Stack类的peek-方法"><a href="#Stack类的peek-方法" class="headerlink" title="Stack类的peek()方法"></a>Stack类的peek()方法</h3><blockquote>
+<p>返回栈的栈顶元素。</p>
+</blockquote>
+<h3 id="Integer类型的-和equals"><a href="#Integer类型的-和equals" class="headerlink" title="Integer类型的==和equals()"></a>Integer类型的==和equals()</h3><p>《阿里Java开发手册》中有这样一项强制要求：</p>
+<blockquote>
+<p>“所有整形包装类对象之间值的比较，全部使用equals方法比较。说明：对于Integer var= ？在-128到127范围内的赋值，Integer对象在IntegerCache.cache产生，会复用已有对象，这个区间的Integer值可以直接使用==进行判断，但是这个区间之外的所有数据都会在堆上产生，并不会复用已有对象，这是一个大坑，推荐使用equals方法进行判断。”</p>
+</blockquote>
+<p>所以：</p>
+<blockquote>
+<p>两个Integer类型数据相等，直接用equals()即可。</p>
+</blockquote>
+<p>方案1的代码中，如果</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(stack1.peek().equals(stack2.peek()))</span><br><span class="line">    写成</span><br><span class="line"><span class="keyword">if</span>(stack1.peek()==stack1.peek())</span><br></pre></td></tr></table></figure>
+<p>那么，程序是无法通过的。</p>
+<h3 id="java-lang-NullPointerException错误"><a href="#java-lang-NullPointerException错误" class="headerlink" title="java.lang.NullPointerException错误"></a>java.lang.NullPointerException错误</h3><p>错误提示：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Exception in thread <span class="string">&quot;main&quot;</span> java.lang.NullPointerException</span><br></pre></td></tr></table></figure>
+<p>原因：</p>
+<blockquote>
+<p>对象未实例化，就直接使用。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>《剑指offer》（第2版）</category>
+        <category>栈</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>《剑指offer》（第2版）</tag>
+        <tag>栈</tag>
+        <tag>简单</tag>
+      </tags>
+  </entry>
 </search>

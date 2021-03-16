@@ -20,26 +20,23 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="前言  &amp;emsp;集众程序猿所爱的VSCode写起Markdown文档来，风格很酷盖~">
+  <meta name="description" content="题目30：包含min函数的栈  定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数。在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。  实例： 12345678MinStack minStack &#x3D; new MinStack();minStack.push(-2);minStack.push(0);minStack.push(-3);minStac">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VSCode下进行Markdown环境搭建">
-<meta property="og:url" content="http://example.com/posts/54b0646e.html">
+<meta property="og:title" content="30(简单)：包含min函数的栈">
+<meta property="og:url" content="http://example.com/posts/1eaa0f0b.html">
 <meta property="og:site_name" content="ChengNing&#39;s Blog">
-<meta property="og:description" content="前言  &amp;emsp;集众程序猿所爱的VSCode写起Markdown文档来，风格很酷盖~">
+<meta property="og:description" content="题目30：包含min函数的栈  定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数。在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。  实例： 12345678MinStack minStack &#x3D; new MinStack();minStack.push(-2);minStack.push(0);minStack.push(-3);minStac">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/image-20210131205254830.png">
-<meta property="og:image" content="http://example.com/images/image-20210131205352781.png">
-<meta property="og:image" content="http://example.com/images/image-20210131205421973.png">
-<meta property="og:image" content="http://example.com/images/image-20210131205452179.png">
-<meta property="article:published_time" content="2021-01-27T10:27:16.000Z">
-<meta property="article:modified_time" content="2021-02-06T05:27:34.354Z">
+<meta property="article:published_time" content="2021-03-16T12:15:58.000Z">
+<meta property="article:modified_time" content="2021-03-16T13:05:29.492Z">
 <meta property="article:author" content="ChengNing">
-<meta property="article:tag" content="Markdown">
-<meta property="article:tag" content="VSCode">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="《剑指offer》（第2版）">
+<meta property="article:tag" content="栈">
+<meta property="article:tag" content="简单">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/image-20210131205254830.png">
 
-<link rel="canonical" href="http://example.com/posts/54b0646e.html">
+<link rel="canonical" href="http://example.com/posts/1eaa0f0b.html">
 
 
 <script id="page-configurations">
@@ -52,7 +49,7 @@
   };
 </script>
 
-  <title>VSCode下进行Markdown环境搭建 | ChengNing's Blog</title>
+  <title>30(简单)：包含min函数的栈 | ChengNing's Blog</title>
   
 
 
@@ -203,7 +200,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/posts/54b0646e.html">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/1eaa0f0b.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
@@ -216,7 +213,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          VSCode下进行Markdown环境搭建
+          30(简单)：包含min函数的栈
         </h1>
 
         <div class="post-meta">
@@ -225,16 +222,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-01-27 18:27:16" itemprop="dateCreated datePublished" datetime="2021-01-27T18:27:16+08:00">2021-01-27</time>
+              <time title="创建时间：2021-03-16 20:15:58 / 修改时间：21:05:29" itemprop="dateCreated datePublished" datetime="2021-03-16T20:15:58+08:00">2021-03-16</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-06 13:27:34" itemprop="dateModified" datetime="2021-02-06T13:27:34+08:00">2021-02-06</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -245,12 +236,16 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E3%80%8A%E5%89%91%E6%8C%87offer%E3%80%8B%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/" itemprop="url" rel="index"><span itemprop="name">《剑指offer》（第2版）</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E3%80%8A%E5%89%91%E6%8C%87offer%E3%80%8B%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">栈</span></a>
                 </span>
             </span>
 
           
-            <span id="/posts/54b0646e.html" class="post-meta-item leancloud_visitors" data-flag-title="VSCode下进行Markdown环境搭建" title="阅读次数">
+            <span id="/posts/1eaa0f0b.html" class="post-meta-item leancloud_visitors" data-flag-title="30(简单)：包含min函数的栈" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -265,8 +260,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/posts/54b0646e.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/54b0646e.html" itemprop="commentCount"></span>
+    <a title="valine" href="/posts/1eaa0f0b.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/1eaa0f0b.html" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -281,24 +276,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>  &emsp;集众程序猿所爱的VSCode写起Markdown文档来，风格很酷盖~</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>30：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/">包含min函数的栈</a></p>
+<blockquote>
+<p>定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数。在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。</p>
+</blockquote>
+<p>实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MinStack minStack = <span class="keyword">new</span> MinStack();</span><br><span class="line">minStack.push(-<span class="number">2</span>);</span><br><span class="line">minStack.push(<span class="number">0</span>);</span><br><span class="line">minStack.push(-<span class="number">3</span>);</span><br><span class="line">minStack.min();   --&gt; 返回 -<span class="number">3.</span></span><br><span class="line">minStack.pop();</span><br><span class="line">minStack.top();      --&gt; 返回 <span class="number">0.</span></span><br><span class="line">minStack.min();   --&gt; 返回 -<span class="number">2.</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h2><h3 id="下载VSCode并安装"><a href="#下载VSCode并安装" class="headerlink" title="下载VSCode并安装"></a>下载VSCode并安装</h3><p><a target="_blank" rel="noopener" href="https://code.visualstudio.com/">下载VSCode</a>，傻瓜式安装。</p>
-<h3 id="VSCode里安装插件"><a href="#VSCode里安装插件" class="headerlink" title="VSCode里安装插件"></a>VSCode里安装插件</h3><p>&emsp;在此安装的插件:  </p>
-<ul>
-<li><u>Markdown All in One</u>:&ensp;Markdown语言支持。 </li>
-<li><u>markdownlint</u>:&ensp;Markdown写作规范。</li>
-<li><u>Prettier</u>:&ensp;格式错误自动修复。</li>
-<li><u>Markdown Preview Enhanced</u>:&ensp;将原生Markdown预览的黑色背景改成白色。</li>
-<li><u>Markdown Preview Github Styling</u>:&ensp;Github风格的预览。</li>
-<li><u>Paste Image</u>:&ensp;从剪切板里粘贴图片到Markdown里。快捷键为Ctrl+Alt+V。</li>
-<li><u>Markdown PDF</u>:&ensp;以PDF或图片的形式导出Markdown。</li>
-</ul>
-<h2 id="一些细节展示"><a href="#一些细节展示" class="headerlink" title="一些细节展示"></a>一些细节展示</h2><h3 id="Paste-Image的配置"><a href="#Paste-Image的配置" class="headerlink" title="Paste Image的配置"></a>Paste Image的配置</h3><p><img src="/images/image-20210131205254830.png" alt="image-20210131205254830"></p>
-<p><img src="/images/image-20210131205352781.png" alt="image-20210131205352781"></p>
-<p><img src="/images/image-20210131205421973.png" alt="image-20210131205421973"></p>
-<p><img src="/images/image-20210131205452179.png" alt="image-20210131205452179"></p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>&emsp;如果追求风格酷盖，VSCode写Markdown是个不错的选择；如果追求简单快捷，还是Typora优秀。</p>
+
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="方案1：使用两个栈"><a href="#方案1：使用两个栈" class="headerlink" title="方案1：使用两个栈"></a>方案1：使用两个栈</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line">	<span class="comment">//声明两个栈</span></span><br><span class="line">	<span class="keyword">private</span> Stack&lt;Integer&gt; stack1,stack2;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="comment">//实例化栈</span></span><br><span class="line">    	stack1 = <span class="keyword">new</span> Stack&lt;&gt;();	</span><br><span class="line">    	stack2 = <span class="keyword">new</span> Stack&lt;&gt;();	<span class="comment">//辅助栈，栈顶元素是栈1的最小值</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//入栈</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    	stack1.push(x);</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">if</span>(stack2.isEmpty() || x&lt;=stack2.peek()) &#123;</span><br><span class="line">    		stack2.push(x);</span><br><span class="line">    	&#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//出栈</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">if</span>(stack1.peek().equals(stack2.peek())) &#123;</span><br><span class="line">    		stack1.pop();</span><br><span class="line">    		stack2.pop();</span><br><span class="line">    	&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    		stack1.pop();</span><br><span class="line">    	&#125; 	</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//栈顶元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">return</span> stack1.peek();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//栈中最小值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">min</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">return</span> stack2.peek();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//出栈</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">if</span>(stack1.pop().equals(stack2.peek())) &#123;</span><br><span class="line">    		stack2.pop();</span><br><span class="line">    	&#125;	</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><h3 id="Stack类的peek-方法"><a href="#Stack类的peek-方法" class="headerlink" title="Stack类的peek()方法"></a>Stack类的peek()方法</h3><blockquote>
+<p>返回栈的栈顶元素。</p>
+</blockquote>
+<h3 id="Integer类型的-和equals"><a href="#Integer类型的-和equals" class="headerlink" title="Integer类型的==和equals()"></a>Integer类型的==和equals()</h3><p>《阿里Java开发手册》中有这样一项强制要求：</p>
+<blockquote>
+<p>“所有整形包装类对象之间值的比较，全部使用equals方法比较。说明：对于Integer var= ？在-128到127范围内的赋值，Integer对象在IntegerCache.cache产生，会复用已有对象，这个区间的Integer值可以直接使用==进行判断，但是这个区间之外的所有数据都会在堆上产生，并不会复用已有对象，这是一个大坑，推荐使用equals方法进行判断。”</p>
+</blockquote>
+<p>所以：</p>
+<blockquote>
+<p>两个Integer类型数据相等，直接用equals()即可。</p>
+</blockquote>
+<p>方案1的代码中，如果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(stack1.peek().equals(stack2.peek()))</span><br><span class="line">    写成</span><br><span class="line"><span class="keyword">if</span>(stack1.peek()==stack1.peek())</span><br></pre></td></tr></table></figure>
+<p>那么，程序是无法通过的。</p>
+<h3 id="java-lang-NullPointerException错误"><a href="#java-lang-NullPointerException错误" class="headerlink" title="java.lang.NullPointerException错误"></a>java.lang.NullPointerException错误</h3><p>错误提示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread <span class="string">&quot;main&quot;</span> java.lang.NullPointerException</span><br></pre></td></tr></table></figure>
+<p>原因：</p>
+<blockquote>
+<p>对象未实例化，就直接使用。</p>
+</blockquote>
 
     </div>
 
@@ -333,8 +342,10 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Markdown/" rel="tag"><i class="fa fa-tag"></i> Markdown</a>
-              <a href="/tags/VSCode/" rel="tag"><i class="fa fa-tag"></i> VSCode</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+              <a href="/tags/%E3%80%8A%E5%89%91%E6%8C%87offer%E3%80%8B%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/" rel="tag"><i class="fa fa-tag"></i> 《剑指offer》（第2版）</a>
+              <a href="/tags/%E6%A0%88/" rel="tag"><i class="fa fa-tag"></i> 栈</a>
+              <a href="/tags/%E7%AE%80%E5%8D%95/" rel="tag"><i class="fa fa-tag"></i> 简单</a>
           </div>
 
         
@@ -343,13 +354,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/1493449015.html" rel="prev" title="Hexo:NexT主题个性化配置">
-      <i class="fa fa-chevron-left"></i> Hexo:NexT主题个性化配置
+    <a href="/posts/c19aac04.html" rel="prev" title="09(简单)：用两个栈实现队列">
+      <i class="fa fa-chevron-left"></i> 09(简单)：用两个栈实现队列
     </a></div>
-      <div class="post-nav-item">
-    <a href="/posts/5e01ee03.html" rel="next" title="Hexo:在Typora中插图片的正确打开方式">
-      Hexo:在Typora中插图片的正确打开方式 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -409,7 +417,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">搭建过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDVSCode%E5%B9%B6%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">下载VSCode并安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VSCode%E9%87%8C%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">VSCode里安装插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E7%BB%86%E8%8A%82%E5%B1%95%E7%A4%BA"><span class="nav-number">3.</span> <span class="nav-text">一些细节展示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Paste-Image%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">3.1.</span> <span class="nav-text">Paste Image的配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%881%EF%BC%9A%E4%BD%BF%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88"><span class="nav-number">2.1.</span> <span class="nav-text">方案1：使用两个栈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96"><span class="nav-number">2.1.1.</span> <span class="nav-text">代码优化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E7%AC%94"><span class="nav-number">3.</span> <span class="nav-text">随笔</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack%E7%B1%BB%E7%9A%84peek-%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">Stack类的peek()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Integer%E7%B1%BB%E5%9E%8B%E7%9A%84-%E5%92%8Cequals"><span class="nav-number">3.2.</span> <span class="nav-text">Integer类型的&#x3D;&#x3D;和equals()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-lang-NullPointerException%E9%94%99%E8%AF%AF"><span class="nav-number">3.3.</span> <span class="nav-text">java.lang.NullPointerException错误</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
