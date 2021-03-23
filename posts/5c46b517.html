@@ -28,7 +28,7 @@
 <meta property="og:description" content="题目59-Ⅱ：队列的最大值  请定义一个队列并实现函数 max_value 得到队列里的最大值，要求函数max_value、push_back 和 pop_front 的均摊时间复杂度都是O(1)。 若队列为空，pop_front 和 max_value 需要返回 -1  示例1： 1234输入: [&quot;MaxQueue&quot;,&quot;push_back&quot;,&quot;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-17T12:47:08.000Z">
-<meta property="article:modified_time" content="2021-03-18T13:57:04.675Z">
+<meta property="article:modified_time" content="2021-03-23T14:36:27.375Z">
 <meta property="article:author" content="ChengNing">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="《剑指offer》（第2版）">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-18 21:57:04" itemprop="dateModified" datetime="2021-03-18T21:57:04+08:00">2021-03-18</time>
+                <time title="修改时间：2021-03-23 22:36:27" itemprop="dateModified" datetime="2021-03-23T22:36:27+08:00">2021-03-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -294,7 +294,7 @@
 <a id="more"></a>
 
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>采用两个队列实现。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MaxQueue</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//声明一个普通队列</span></span><br><span class="line">	Queue&lt;Integer&gt; que;</span><br><span class="line">	<span class="comment">//声明一个双端队列</span></span><br><span class="line">	Deque&lt;Integer&gt; deq;</span><br><span class="line">   </span><br><span class="line">    <span class="comment">//构造方法，类的初始化</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MaxQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line"> 	    <span class="comment">//实例化队列</span></span><br><span class="line">    	que= <span class="keyword">new</span> LinkedList&lt;&gt;();<span class="comment">//普通队列，执行正常操作</span></span><br><span class="line">    	deq= <span class="keyword">new</span> LinkedList&lt;&gt;();<span class="comment">//双端队列，辅助普通队列找最大值</span></span><br><span class="line">    	</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//找队列中的最大值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">max_value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">if</span>(deq.isEmpty()) &#123;</span><br><span class="line">    		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">return</span> deq.peekFirst();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="comment">//入队</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push_back</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line">    	que.offer(value);</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">while</span>(!deq.isEmpty() &amp;&amp; deq.peekLast()&lt;value) &#123;</span><br><span class="line">    		deq.pollLast();</span><br><span class="line">    	&#125;</span><br><span class="line">    	deq.offerLast(value);</span><br><span class="line">    	</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//出队</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pop_front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">if</span>(que.isEmpty()) &#123;</span><br><span class="line">    		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">if</span>(que.peek().equals(deq.peekFirst())) &#123;</span><br><span class="line">    		deq.pollFirst();</span><br><span class="line">    	&#125;	</span><br><span class="line">    		</span><br><span class="line">    	<span class="keyword">return</span> que.poll();</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MaxQueue</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//声明一个普通队列</span></span><br><span class="line">	Queue&lt;Integer&gt; que;</span><br><span class="line">	<span class="comment">//声明一个双端单调队列</span></span><br><span class="line">	Deque&lt;Integer&gt; deq;</span><br><span class="line">   </span><br><span class="line">    <span class="comment">//构造方法，类的初始化</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MaxQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line"> 	    <span class="comment">//实例化队列</span></span><br><span class="line">    	que= <span class="keyword">new</span> LinkedList&lt;&gt;();<span class="comment">//普通队列，执行正常操作</span></span><br><span class="line">    	deq= <span class="keyword">new</span> LinkedList&lt;&gt;();<span class="comment">//双端单调队列，辅助普通队列找最大值</span></span><br><span class="line">    	</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//找队列中的最大值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">max_value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">if</span>(deq.isEmpty()) &#123;</span><br><span class="line">    		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">return</span> deq.peekFirst();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="comment">//入队</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push_back</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line">    	que.offer(value);</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">while</span>(!deq.isEmpty() &amp;&amp; deq.peekLast()&lt;value) &#123;</span><br><span class="line">    		deq.pollLast();</span><br><span class="line">    	&#125;</span><br><span class="line">    	deq.offerLast(value);</span><br><span class="line">    	</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//出队</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pop_front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">if</span>(que.isEmpty()) &#123;</span><br><span class="line">    		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">if</span>(que.peek().equals(deq.peekFirst())) &#123;</span><br><span class="line">    		deq.pollFirst();</span><br><span class="line">    	&#125;	</span><br><span class="line">    		</span><br><span class="line">    	<span class="keyword">return</span> que.poll();</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><h3 id="java类Queue"><a href="#java类Queue" class="headerlink" title="java类Queue"></a>java类Queue</h3><p>1、创建一个普通队列</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Queue&lt;Integer&gt; que = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br></pre></td></tr></table></figure>
 <p>2、常用方法</p>
@@ -308,7 +308,7 @@
 <blockquote>
 <p>入队。</p>
 <p>参数列表：int value</p>
-<p>返回值类型：void</p>
+<p>返回值类型：boolean</p>
 </blockquote>
 <p>（3）poll()</p>
 <blockquote>
@@ -335,7 +335,7 @@
 <blockquote>
 <p>从首端入队；从尾端入队</p>
 <p>参数列表：int value</p>
-<p>返回值类型：void</p>
+<p>返回值类型：boolean</p>
 </blockquote>
 <p>（3）pollFirst() 和 pollLast()</p>
 <blockquote>
@@ -343,7 +343,14 @@
 <p>参数列表：无</p>
 <p>返回值类型：int</p>
 </blockquote>
-<p>（4）peekFirst() 和 peekLast()</p>
+<p>（4）removeFirst()和removeLast()</p>
+<blockquote>
+<p>从首端删除元素并返回值；从尾端删除元素并返回值</p>
+<p>参数列表：无</p>
+<p>返回值类型：int</p>
+</blockquote>
+<p>​      与pollFirst() 和 pollLast()的功能没啥区别。</p>
+<p>（5）peekFirst() 和 peekLast()</p>
 <blockquote>
 <p>查看首端元素；查看尾端元素</p>
 <p>参数列表：无</p>
@@ -414,7 +421,10 @@
     <a href="/posts/1eaa0f0b.html" rel="prev" title="30(简单)：包含min函数的栈">
       <i class="fa fa-chevron-left"></i> 30(简单)：包含min函数的栈
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/posts/701a824e.html" rel="next" title="59-I(简单)：滑动窗口的最大值">
+      59-I(简单)：滑动窗口的最大值 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -490,7 +500,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
