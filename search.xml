@@ -357,4 +357,80 @@
         <tag>数组</tag>
       </tags>
   </entry>
+  <entry>
+    <title>29(简单)：逆时针打印矩阵</title>
+    <url>/posts/d23265fa.html</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>29：<a href="https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/">逆时针打印矩阵</a></p>
+<blockquote>
+<p>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。</p>
+</blockquote>
+<p>示例1：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">输入：matrix = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]]</span><br><span class="line">输出：[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+<p>示例2：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">输入：matrix = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]]</span><br><span class="line">输出：[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">12</span>,<span class="number">11</span>,<span class="number">10</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>像剥洋葱一样，直到遍历结束。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] spiralOrder(<span class="keyword">int</span>[][] matrix) &#123;</span><br><span class="line">        <span class="keyword">int</span> height = matrix.length;</span><br><span class="line">        <span class="comment">//matrix为空</span></span><br><span class="line">        <span class="keyword">if</span>(height==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> width = matrix[<span class="number">0</span>].length;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//矩阵中未遍历的上下左右界限</span></span><br><span class="line">        <span class="keyword">int</span> top=<span class="number">0</span>,bottom=height-<span class="number">1</span>,left=<span class="number">0</span>,right=width-<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[width*height];</span><br><span class="line">        <span class="keyword">int</span> arr_index = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=left;i&lt;=right;i++)&#123;</span><br><span class="line">                arr[arr_index++]=matrix[top][i];</span><br><span class="line">            &#125;</span><br><span class="line">            top++;</span><br><span class="line">            <span class="keyword">if</span>(top&gt;bottom) <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=top;i&lt;=bottom;i++)&#123;</span><br><span class="line">                arr[arr_index++]=matrix[i][right];</span><br><span class="line">            &#125;</span><br><span class="line">            right--;</span><br><span class="line">            <span class="keyword">if</span>(right&lt;left) <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=right;i&gt;=left;i--)&#123;</span><br><span class="line">                arr[arr_index++]=matrix[bottom][i];</span><br><span class="line">            &#125;</span><br><span class="line">            bottom--;</span><br><span class="line">            <span class="keyword">if</span>(bottom&lt;top) <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=bottom;i&gt;=top;i--)&#123;</span><br><span class="line">                arr[arr_index++]=matrix[i][left];</span><br><span class="line">            &#125;</span><br><span class="line">            left++;</span><br><span class="line">            <span class="keyword">if</span>(left&gt;right) <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><h3 id="二维数组的长度"><a href="#二维数组的长度" class="headerlink" title="二维数组的长度"></a>二维数组的长度</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[][] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][<span class="number">4</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> length = arr.length;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;length = &quot;</span> + length);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">length = <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>二维数组可认为是由一维数组组成。</p>
+<p>很显然，二维数组的长度为一维数组的个数。</p>
+<h3 id="一个矩阵的行数和列数"><a href="#一个矩阵的行数和列数" class="headerlink" title="一个矩阵的行数和列数"></a>一个矩阵的行数和列数</h3><p>使用二维数组来表示一个矩阵。</p>
+<blockquote>
+<p>矩阵的行数  =  二维数组的长度</p>
+<p>矩阵的列数  =  一维数组的长度</p>
+</blockquote>
+<h3 id="直接返回一维空数组"><a href="#直接返回一维空数组" class="headerlink" title="直接返回一维空数组"></a>直接返回一维空数组</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>《剑指offer》（第2版）</category>
+        <category>数组</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>《剑指offer》（第2版）</tag>
+        <tag>简单</tag>
+        <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java：-source1.5中不支持diamond运算符(请使用-source7或更高版本以启用diamond运算符)</title>
+    <url>/posts/af530ec4.html</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;往idea里导入一个现有的项目后，运行时报错。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><blockquote>
+<p>java：-source1.5中不支持diamond运算符(请使用-source7或更高版本以启用diamond运算符)</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>&emsp;&emsp;该项目Modules中的Language level为1.5，版本较低，不支持diamond运算符(&lt;&gt;)。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>&emsp;&emsp;将该项目Modules中的Language level改为7或者更高的版本。</p>
+<p>&emsp;&emsp;具体操作：</p>
+<blockquote>
+<p>File → Projuect structure → Modules → Sources → Language level</p>
+<p>修改即可。</p>
+</blockquote>
+<h2 id="后续问题与解决方法"><a href="#后续问题与解决方法" class="headerlink" title="后续问题与解决方法"></a>后续问题与解决方法</h2><p>&emsp;&emsp;上述问题解决后，会出现以下问题：</p>
+<blockquote>
+<p>java：Compilation failed：internal java compiler error</p>
+</blockquote>
+<p>&emsp;&emsp;根据错误提示，可知，内部的java编译器出错。具体解决方法：</p>
+<blockquote>
+<p>File → Settings</p>
+<p>搜索框里：Java Complier，进入</p>
+<p>修改Module的Target bytecode version与Language level一致即可。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>环境</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+      </tags>
+  </entry>
 </search>
