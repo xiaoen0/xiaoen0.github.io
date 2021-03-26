@@ -358,9 +358,44 @@
       </tags>
   </entry>
   <entry>
-    <title>29(简单)：逆时针打印矩阵</title>
+    <title>java：-source1.5中不支持diamond运算符(请使用-source7或更高版本以启用diamond运算符)</title>
+    <url>/posts/af530ec4.html</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;往idea里导入一个现有的项目后，运行时报错。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><blockquote>
+<p>java：-source1.5中不支持diamond运算符(请使用-source7或更高版本以启用diamond运算符)</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>&emsp;&emsp;该项目Modules中的Language level为1.5，版本较低，不支持diamond运算符(&lt;&gt;)。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>&emsp;&emsp;将该项目Modules中的Language level改为7或者更高的版本。</p>
+<p>&emsp;&emsp;具体操作：</p>
+<blockquote>
+<p>File → Projuect structure → Modules → Sources → Language level</p>
+<p>修改即可。</p>
+</blockquote>
+<h2 id="后续问题与解决方法"><a href="#后续问题与解决方法" class="headerlink" title="后续问题与解决方法"></a>后续问题与解决方法</h2><p>&emsp;&emsp;上述问题解决后，会出现以下问题：</p>
+<blockquote>
+<p>java：Compilation failed：internal java compiler error</p>
+</blockquote>
+<p>&emsp;&emsp;根据错误提示，可知，内部的java编译器出错。具体解决方法：</p>
+<blockquote>
+<p>File → Settings</p>
+<p>搜索框里：Java Complier，进入</p>
+<p>修改Module的Target bytecode version与Language level一致即可。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>环境</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>29(简单)：顺时针打印矩阵</title>
     <url>/posts/d23265fa.html</url>
-    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>29：<a href="https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/">逆时针打印矩阵</a></p>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>29：<a href="https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/">顺时针打印矩阵</a></p>
 <blockquote>
 <p>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。</p>
 </blockquote>
@@ -396,41 +431,6 @@
         <tag>《剑指offer》（第2版）</tag>
         <tag>简单</tag>
         <tag>数组</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java：-source1.5中不支持diamond运算符(请使用-source7或更高版本以启用diamond运算符)</title>
-    <url>/posts/af530ec4.html</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;往idea里导入一个现有的项目后，运行时报错。</p>
-<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><blockquote>
-<p>java：-source1.5中不支持diamond运算符(请使用-source7或更高版本以启用diamond运算符)</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>&emsp;&emsp;该项目Modules中的Language level为1.5，版本较低，不支持diamond运算符(&lt;&gt;)。</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>&emsp;&emsp;将该项目Modules中的Language level改为7或者更高的版本。</p>
-<p>&emsp;&emsp;具体操作：</p>
-<blockquote>
-<p>File → Projuect structure → Modules → Sources → Language level</p>
-<p>修改即可。</p>
-</blockquote>
-<h2 id="后续问题与解决方法"><a href="#后续问题与解决方法" class="headerlink" title="后续问题与解决方法"></a>后续问题与解决方法</h2><p>&emsp;&emsp;上述问题解决后，会出现以下问题：</p>
-<blockquote>
-<p>java：Compilation failed：internal java compiler error</p>
-</blockquote>
-<p>&emsp;&emsp;根据错误提示，可知，内部的java编译器出错。具体解决方法：</p>
-<blockquote>
-<p>File → Settings</p>
-<p>搜索框里：Java Complier，进入</p>
-<p>修改Module的Target bytecode version与Language level一致即可。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>环境</category>
-      </categories>
-      <tags>
-        <tag>idea</tag>
       </tags>
   </entry>
 </search>
