@@ -20,23 +20,23 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="题目59-Ⅱ：队列的最大值  请定义一个队列并实现函数 max_value 得到队列里的最大值，要求函数max_value、push_back 和 pop_front 的均摊时间复杂度都是O(1)。 若队列为空，pop_front 和 max_value 需要返回 -1  示例1： 1234输入: [&quot;MaxQueue&quot;,&quot;push_back&quot;,&quot;">
+  <meta name="description" content="题目53-II：0~n-1中缺失的数字  一个长度为n-1的递增排序数组中的所有数字都是唯一的，并且每个数字都在范围0～n-1之内。在范围0～n-1内的n个数字中有且只有一个数字不在该数组中，请找出这个数字。  实例1： 12输入: [0,1,3]输出: 2 实例2： 12输入: [0,1,2,3,4,5,6,7,9]输出: 8">
 <meta property="og:type" content="article">
-<meta property="og:title" content="59-Ⅱ(中等)：队列的最大值">
-<meta property="og:url" content="http://example.com/posts/5c46b517.html">
+<meta property="og:title" content="53-II(简单)：0~n-1中缺失的数字">
+<meta property="og:url" content="http://example.com/posts/3af126c2.html">
 <meta property="og:site_name" content="ChengNing&#39;s Blog">
-<meta property="og:description" content="题目59-Ⅱ：队列的最大值  请定义一个队列并实现函数 max_value 得到队列里的最大值，要求函数max_value、push_back 和 pop_front 的均摊时间复杂度都是O(1)。 若队列为空，pop_front 和 max_value 需要返回 -1  示例1： 1234输入: [&quot;MaxQueue&quot;,&quot;push_back&quot;,&quot;">
+<meta property="og:description" content="题目53-II：0~n-1中缺失的数字  一个长度为n-1的递增排序数组中的所有数字都是唯一的，并且每个数字都在范围0～n-1之内。在范围0～n-1内的n个数字中有且只有一个数字不在该数组中，请找出这个数字。  实例1： 12输入: [0,1,3]输出: 2 实例2： 12输入: [0,1,2,3,4,5,6,7,9]输出: 8">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-17T12:47:08.000Z">
-<meta property="article:modified_time" content="2021-03-24T12:45:13.827Z">
+<meta property="article:published_time" content="2021-03-29T12:03:08.000Z">
+<meta property="article:modified_time" content="2021-03-29T12:54:28.008Z">
 <meta property="article:author" content="ChengNing">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="《剑指offer》（第2版）">
-<meta property="article:tag" content="队列">
-<meta property="article:tag" content="中等">
+<meta property="article:tag" content="简单">
+<meta property="article:tag" content="数组">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/posts/5c46b517.html">
+<link rel="canonical" href="http://example.com/posts/3af126c2.html">
 
 
 <script id="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>59-Ⅱ(中等)：队列的最大值 | ChengNing's Blog</title>
+  <title>53-II(简单)：0~n-1中缺失的数字 | ChengNing's Blog</title>
   
 
 
@@ -200,7 +200,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/posts/5c46b517.html">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/3af126c2.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
@@ -213,7 +213,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          59-Ⅱ(中等)：队列的最大值
+          53-II(简单)：0~n-1中缺失的数字
         </h1>
 
         <div class="post-meta">
@@ -222,16 +222,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-03-17 20:47:08" itemprop="dateCreated datePublished" datetime="2021-03-17T20:47:08+08:00">2021-03-17</time>
+              <time title="创建时间：2021-03-29 20:03:08 / 修改时间：20:54:28" itemprop="dateCreated datePublished" datetime="2021-03-29T20:03:08+08:00">2021-03-29</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-24 20:45:13" itemprop="dateModified" datetime="2021-03-24T20:45:13+08:00">2021-03-24</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -246,12 +240,12 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E3%80%8A%E5%89%91%E6%8C%87offer%E3%80%8B%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/%E9%98%9F%E5%88%97/" itemprop="url" rel="index"><span itemprop="name">队列</span></a>
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E3%80%8A%E5%89%91%E6%8C%87offer%E3%80%8B%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/%E6%95%B0%E7%BB%84/" itemprop="url" rel="index"><span itemprop="name">数组</span></a>
                 </span>
             </span>
 
           
-            <span id="/posts/5c46b517.html" class="post-meta-item leancloud_visitors" data-flag-title="59-Ⅱ(中等)：队列的最大值" title="阅读次数">
+            <span id="/posts/3af126c2.html" class="post-meta-item leancloud_visitors" data-flag-title="53-II(简单)：0~n-1中缺失的数字" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -266,8 +260,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/posts/5c46b517.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/5c46b517.html" itemprop="commentCount"></span>
+    <a title="valine" href="/posts/3af126c2.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/3af126c2.html" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -282,96 +276,44 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>59-Ⅱ：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof/">队列的最大值</a></p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>53-II：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/">0~n-1中缺失的数字</a></p>
 <blockquote>
-<p>请定义一个队列并实现函数 max_value 得到队列里的最大值，要求函数max_value、push_back 和 pop_front 的均摊时间复杂度都是O(1)。</p>
-<p>若队列为空，pop_front 和 max_value 需要返回 -1</p>
+<p>一个长度为n-1的递增排序数组中的所有数字都是唯一的，并且每个数字都在范围0～n-1之内。在范围0～n-1内的n个数字中有且只有一个数字不在该数组中，请找出这个数字。</p>
 </blockquote>
-<p>示例1：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: </span><br><span class="line">[<span class="string">&quot;MaxQueue&quot;</span>,<span class="string">&quot;push_back&quot;</span>,<span class="string">&quot;push_back&quot;</span>,<span class="string">&quot;max_value&quot;</span>,<span class="string">&quot;pop_front&quot;</span>,<span class="string">&quot;max_value&quot;</span>]</span><br><span class="line">[[],[<span class="number">1</span>],[<span class="number">2</span>],[],[],[]]</span><br><span class="line">输出: [<span class="keyword">null</span>,<span class="keyword">null</span>,<span class="keyword">null</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-<p>示例2：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: </span><br><span class="line">[<span class="string">&quot;MaxQueue&quot;</span>,<span class="string">&quot;pop_front&quot;</span>,<span class="string">&quot;max_value&quot;</span>]</span><br><span class="line">[[],[],[]]</span><br><span class="line">输出: [<span class="keyword">null</span>,-<span class="number">1</span>,-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<p>实例1：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [<span class="number">0</span>,<span class="number">1</span>,<span class="number">3</span>]</span><br><span class="line">输出: <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>实例2：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">9</span>]</span><br><span class="line">输出: <span class="number">8</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>采用两个队列实现。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MaxQueue</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//声明一个普通队列</span></span><br><span class="line">	Queue&lt;Integer&gt; que;</span><br><span class="line">	<span class="comment">//声明一个双端单调队列</span></span><br><span class="line">	Deque&lt;Integer&gt; deq;</span><br><span class="line">   </span><br><span class="line">    <span class="comment">//构造方法，类的初始化</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MaxQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line"> 	    <span class="comment">//实例化队列</span></span><br><span class="line">    	que= <span class="keyword">new</span> LinkedList&lt;&gt;();<span class="comment">//普通队列，执行正常操作</span></span><br><span class="line">    	deq= <span class="keyword">new</span> LinkedList&lt;&gt;();<span class="comment">//双端单调队列，辅助普通队列找最大值</span></span><br><span class="line">    	</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//找队列中的最大值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">max_value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">if</span>(deq.isEmpty()) &#123;</span><br><span class="line">    		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">return</span> deq.peekFirst();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="comment">//入队</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push_back</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    	</span><br><span class="line">    	que.offer(value);</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">while</span>(!deq.isEmpty() &amp;&amp; deq.peekLast()&lt;value) &#123;</span><br><span class="line">    		deq.pollLast();</span><br><span class="line">    	&#125;</span><br><span class="line">    	deq.offerLast(value);</span><br><span class="line">    	</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//出队</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pop_front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">if</span>(que.isEmpty()) &#123;</span><br><span class="line">    		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">if</span>(que.peek().equals(deq.peekFirst())) &#123;</span><br><span class="line">    		deq.pollFirst();</span><br><span class="line">    	&#125;	</span><br><span class="line">    		</span><br><span class="line">    	<span class="keyword">return</span> que.poll();</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><h3 id="java类Queue"><a href="#java类Queue" class="headerlink" title="java类Queue"></a>java类Queue</h3><p>1、创建一个普通队列</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Queue&lt;Integer&gt; que = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br></pre></td></tr></table></figure>
-<p>2、常用方法</p>
-<p>（1）isEmpty()</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="方案1：暴力求解"><a href="#方案1：暴力求解" class="headerlink" title="方案1：暴力求解"></a>方案1：暴力求解</h3><p>缺失的数字分为两种情况：</p>
 <blockquote>
-<p>判断队列是否为空。</p>
-<p>参数列表：无</p>
-<p>返回值类型：boolean</p>
+<p>第一种情况：缺失的是最后一个数字，即n-1，直接return nums.length。</p>
+<p>第二种情况：缺失的是除最后一个数字之外的任何其他数字，这时它是数组中第一个元素值≠其对应的索引的数字。</p>
 </blockquote>
-<p>（2）offer(Integer value)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">missingNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]!=i)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> nums.length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="方案2：算法优化"><a href="#方案2：算法优化" class="headerlink" title="方案2：算法优化"></a>方案2：算法优化</h3><p>采用二分法。</p>
 <blockquote>
-<p>入队。</p>
-<p>参数列表：integer value</p>
-<p>返回值类型：boolean</p>
+<p>将数组分为两部分：左子数组和右子数组。</p>
+<p>左子数组：元素值 = 索引</p>
+<p>右子数组：首元素值 ≠ 索引</p>
+<p>此时，缺失的数字即为右子数组的首元素。</p>
 </blockquote>
-<p>（3）poll()</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">missingNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//初始化</span></span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>,j=nums.length-<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//循环二分</span></span><br><span class="line">        <span class="keyword">while</span>(i&lt;=j)&#123;</span><br><span class="line">            <span class="keyword">int</span> m=(i+j)/<span class="number">2</span>;<span class="comment">//默认向下取整</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(nums[m]==m)&#123;</span><br><span class="line">                i=m+<span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                j=m-<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> i;<span class="comment">//返回右子数组的首元素</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><h3 id="排序数组中的查找问题"><a href="#排序数组中的查找问题" class="headerlink" title="排序数组中的查找问题"></a>排序数组中的查找问题</h3><blockquote>
+<p>首先想到用二分法来解决。</p>
+</blockquote>
+<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><p>方案1：</p>
 <blockquote>
-<p>出队并返回值。</p>
-<p>参数列表：无</p>
-<p>返回值类型：int</p>
+<p>时间复杂度：O(n)，遍历为线性级复杂度。</p>
+<p>空间复杂度：O(1)，几个变量使用常数大小的额外空间。</p>
 </blockquote>
-<p>（4）peek()</p>
+<p>方案2：</p>
 <blockquote>
-<p>查看队首元素。</p>
-<p>参数列表：无</p>
-<p>返回值类型：int</p>
+<p>时间复杂度：O(logn)，二分法为对数级复杂度。</p>
+<p>空间复杂度：O(1)，几个变量使用常数大小的额外空间。</p>
 </blockquote>
-<h3 id="java类Deque"><a href="#java类Deque" class="headerlink" title="java类Deque"></a>java类Deque</h3><p>1、创建一个双端队列</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Deque&lt;Integer&gt; deq = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br></pre></td></tr></table></figure>
-<p>2、常用方法</p>
-<p>（1）isEmpty()</p>
-<blockquote>
-<p>判断队列是否为空。</p>
-<p>参数列表：无</p>
-<p>返回值类型：boolean</p>
-</blockquote>
-<p>（2）offerFirst(integer value) 和 offerLast(integer value)</p>
-<blockquote>
-<p>从首端入队；从尾端入队</p>
-<p>参数列表：int value</p>
-<p>返回值类型：boolean</p>
-</blockquote>
-<p>（3）pollFirst() 和 pollLast()</p>
-<blockquote>
-<p>从首端出队并返回值；从尾端出队并返回值</p>
-<p>参数列表：无</p>
-<p>返回值类型：int</p>
-</blockquote>
-<p>（4）removeFirst()和removeLast()</p>
-<blockquote>
-<p>从首端删除元素并返回值；从尾端删除元素并返回值</p>
-<p>参数列表：无</p>
-<p>返回值类型：int</p>
-</blockquote>
-<p>​      与pollFirst() 和 pollLast()的功能没啥区别。</p>
-<p>（5）peekFirst() 和 peekLast()</p>
-<blockquote>
-<p>查看首端元素；查看尾端元素</p>
-<p>参数列表：无</p>
-<p>返回值类型：int</p>
-</blockquote>
-<h3 id="时间复杂度分析"><a href="#时间复杂度分析" class="headerlink" title="时间复杂度分析"></a>时间复杂度分析</h3><p>1、max_value()</p>
-<blockquote>
-<p>每次时间复杂度都是O(1)，直接返回双端队列的首端元素。</p>
-</blockquote>
-<p>2、push_back()</p>
-<blockquote>
-<p>均摊时间复杂度为O(1)（并不一定每次时间复杂度都是O(1)），例如 76543218 ，最后一次 push_back 操作是O(n)，其他每次push_back 操作都是O(1)，均摊时间复杂度为(O(1)×(n-1)+O(n))/n=O(1)。</p>
-</blockquote>
-<p>3、pop_front()</p>
-<blockquote>
-<p>每次时间复杂度都是O(1)，从普通队列里出一个元素，如果该元素恰好是最大值，双端队列的首端元素也出队，仍然是常数时间复杂度。</p>
-</blockquote>
-<p>小结：</p>
-<blockquote>
-<p>在时间复杂度为O(1)的情况下，找栈或队列的最大值或最小值，往往需要一个辅助的数据结构来实现，具体选用什么样的数据结构需要在做题过程中进行总结。</p>
-</blockquote>
+<p>很显然，二分法更有优势。</p>
 
     </div>
 
@@ -408,8 +350,8 @@
           <div class="post-tags">
               <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
               <a href="/tags/%E3%80%8A%E5%89%91%E6%8C%87offer%E3%80%8B%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/" rel="tag"><i class="fa fa-tag"></i> 《剑指offer》（第2版）</a>
-              <a href="/tags/%E9%98%9F%E5%88%97/" rel="tag"><i class="fa fa-tag"></i> 队列</a>
-              <a href="/tags/%E4%B8%AD%E7%AD%89/" rel="tag"><i class="fa fa-tag"></i> 中等</a>
+              <a href="/tags/%E7%AE%80%E5%8D%95/" rel="tag"><i class="fa fa-tag"></i> 简单</a>
+              <a href="/tags/%E6%95%B0%E7%BB%84/" rel="tag"><i class="fa fa-tag"></i> 数组</a>
           </div>
 
         
@@ -418,13 +360,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/1eaa0f0b.html" rel="prev" title="30(简单)：包含min函数的栈">
-      <i class="fa fa-chevron-left"></i> 30(简单)：包含min函数的栈
+    <a href="/posts/218fb600.html" rel="prev" title="53-I(简单)：在排序数组中查找数字I">
+      <i class="fa fa-chevron-left"></i> 53-I(简单)：在排序数组中查找数字I
     </a></div>
-      <div class="post-nav-item">
-    <a href="/posts/701a824e.html" rel="next" title="59-I(简单)：滑动窗口的最大值">
-      59-I(简单)：滑动窗口的最大值 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -484,7 +423,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E7%AC%94"><span class="nav-number">3.</span> <span class="nav-text">随笔</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E7%B1%BBQueue"><span class="nav-number">3.1.</span> <span class="nav-text">java类Queue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E7%B1%BBDeque"><span class="nav-number">3.2.</span> <span class="nav-text">java类Deque</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-number">3.3.</span> <span class="nav-text">时间复杂度分析</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%881%EF%BC%9A%E6%9A%B4%E5%8A%9B%E6%B1%82%E8%A7%A3"><span class="nav-number">2.1.</span> <span class="nav-text">方案1：暴力求解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%A1%882%EF%BC%9A%E7%AE%97%E6%B3%95%E4%BC%98%E5%8C%96"><span class="nav-number">2.2.</span> <span class="nav-text">方案2：算法优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E7%AC%94"><span class="nav-number">3.</span> <span class="nav-text">随笔</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE%E9%97%AE%E9%A2%98"><span class="nav-number">3.1.</span> <span class="nav-text">排序数组中的查找问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-number">3.2.</span> <span class="nav-text">复杂度分析</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
