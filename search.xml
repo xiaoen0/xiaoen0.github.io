@@ -536,4 +536,96 @@
         <tag>数组</tag>
       </tags>
   </entry>
+  <entry>
+    <title>04(中等)：二维数组中的查找</title>
+    <url>/posts/11740849.html</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>04：<a href="https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/">二维数组中的查找</a></p>
+<blockquote>
+<p>在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> matrix = [</span><br><span class="line">  [<span class="number">1</span>,   <span class="number">4</span>,  <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>],</span><br><span class="line">  [<span class="number">2</span>,   <span class="number">5</span>,  <span class="number">8</span>, <span class="number">12</span>, <span class="number">19</span>],</span><br><span class="line">  [<span class="number">3</span>,   <span class="number">6</span>,  <span class="number">9</span>, <span class="number">16</span>, <span class="number">22</span>],</span><br><span class="line">  [<span class="number">10</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">17</span>, <span class="number">24</span>],</span><br><span class="line">  [<span class="number">18</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">26</span>, <span class="number">30</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>给定 target = 5，返回 true。</p>
+<p>给定 target = 20，返回 false。</p>
+<a id="more"></a>
+
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="方案1：暴力破解"><a href="#方案1：暴力破解" class="headerlink" title="方案1：暴力破解"></a>方案1：暴力破解</h3><p>直接遍历二维数组。</p>
+<blockquote>
+<p>存在元素=target，返回true，否则，返回false。</p>
+</blockquote>
+<p>显然，暴力破解并没有用到题目给数组的限制条件：</p>
+<blockquote>
+<p>每一行都按照从左到右递增的顺序排序</p>
+<p>每一列都按照从上到下递增的顺序排序</p>
+</blockquote>
+<p>正因为如此，恰好验证了暴力破解不是该题目高效的算法。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">findNumberIn2DArray</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> height = matrix.length;</span><br><span class="line">        <span class="keyword">if</span>(height==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> width = matrix[<span class="number">0</span>].length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;height;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;width;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(matrix[i][j]==target)&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="方案2：算法优化"><a href="#方案2：算法优化" class="headerlink" title="方案2：算法优化"></a>方案2：算法优化</h3><p>抓有特征的元素。</p>
+<p>在这里是左下角元素和右上角元素：</p>
+<blockquote>
+<p>左下角元素：所在行元素，均比它大；所在列元素，均比它小。</p>
+<p>右上角元素：所在行元素，均比它小；所在列元素，均比它大。</p>
+</blockquote>
+<p>选择一个有特征的元素即可。</p>
+<p>将左下角元素作为flag(标志元素)：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">findNumberIn2DArray</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> height = matrix.length;</span><br><span class="line">        <span class="keyword">if</span>(height==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> width = matrix[<span class="number">0</span>].length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i=height-<span class="number">1</span>,j=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (i&gt;=<span class="number">0</span> &amp;&amp; j&lt;=width-<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> flag = matrix[i][j];</span><br><span class="line">            <span class="keyword">if</span>(target&lt;flag)&#123;</span><br><span class="line">                i--;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(target&gt;flag)&#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将右上角元素作为flag(标志元素)：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">findNumberIn2DArray</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> height = matrix.length;</span><br><span class="line">        <span class="keyword">if</span>(height==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> width = matrix[<span class="number">0</span>].length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>,j=width-<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (i&lt;=height-<span class="number">1</span> &amp;&amp; j&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> flag = matrix[i][j];</span><br><span class="line">            <span class="keyword">if</span>(target&lt;flag)&#123;</span><br><span class="line">                j--;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(target&gt;flag)&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><p>方案1：</p>
+<blockquote>
+<p>时间复杂度：O(n * m)，最多循环 n * m 次。</p>
+<p>空间复杂度：几个变量使用常数大小的额外空间。</p>
+</blockquote>
+<p>方案2：</p>
+<blockquote>
+<p>时间复杂度：O(n + m)，最多循环 n + m 次。</p>
+<p>空间复杂度：几个变量使用常数大小的额外空间。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>《剑指offer》（第2版）</category>
+        <category>数组</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>《剑指offer》（第2版）</tag>
+        <tag>中等</tag>
+        <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MOA：moa.classifiers-AbstractClassifier.java</title>
+    <url>/posts/35ddf947.html</url>
+    <content><![CDATA[<h2 id="顶层结构"><a href="#顶层结构" class="headerlink" title="顶层结构"></a>顶层结构</h2><blockquote>
+<p>AbstractClassifier抽象类</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="继承的类"><a href="#继承的类" class="headerlink" title="继承的类"></a>继承的类</h2><h2 id="实现的接口"><a href="#实现的接口" class="headerlink" title="实现的接口"></a>实现的接口</h2><blockquote>
+<p>CapabilitiesHandler接口：检查数据集的合规性</p>
+<p>Classifier接口：关键接口</p>
+</blockquote>
+<h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><h3 id="Java接口"><a href="#Java接口" class="headerlink" title="Java接口"></a>Java接口</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Classifier</span> <span class="keyword">extends</span> <span class="title">Learner</span>&lt;<span class="title">Example</span>&lt;<span class="title">Instance</span>&gt;&gt; </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接口的声明语法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">[可见度] interface 接口名称 [extends 其他的接口名] &#123;</span><br><span class="line">        <span class="comment">// 成员变量(只能是public static final类型的)</span></span><br><span class="line">        <span class="comment">// 抽象方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<p>1、接口的继承</p>
+<blockquote>
+<p>一个接口能继承另一个接口，和类之间的继承方式比较相似。接口的继承使用extends关键字，子接口继承父接口的方法。</p>
+</blockquote>
+<p>2、接口的多继承</p>
+<blockquote>
+<p>在Java中，类的多继承是不合法，但接口允许多继承。</p>
+<p>在接口的多继承中extends关键字只需要使用一次，在其后跟着继承接口。示例如下：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Hockey</span> <span class="keyword">extends</span> <span class="title">Sports</span>, <span class="title">Event</span></span>&#123;</span><br><span class="line">        <span class="comment">// 成员变量(只能是public static final类型的)</span></span><br><span class="line">        <span class="comment">// 抽象方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>更多见：<a href="https://www.runoob.com/java/java-interfaces.html">Java接口 | 菜鸟教程</a></p>
+]]></content>
+      <tags>
+        <tag>MOA</tag>
+        <tag>分类</tag>
+      </tags>
+  </entry>
 </search>
