@@ -537,6 +537,44 @@
       </tags>
   </entry>
   <entry>
+    <title>MOA：moa.classifiers-AbstractClassifier.java</title>
+    <url>/posts/35ddf947.html</url>
+    <content><![CDATA[<h2 id="顶层结构"><a href="#顶层结构" class="headerlink" title="顶层结构"></a>顶层结构</h2><blockquote>
+<p>AbstractClassifier抽象类</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="继承的类"><a href="#继承的类" class="headerlink" title="继承的类"></a>继承的类</h2><h2 id="实现的接口"><a href="#实现的接口" class="headerlink" title="实现的接口"></a>实现的接口</h2><blockquote>
+<p>CapabilitiesHandler接口：检查数据集的合规性</p>
+<p>Classifier接口：关键接口</p>
+</blockquote>
+<h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><h3 id="Java接口"><a href="#Java接口" class="headerlink" title="Java接口"></a>Java接口</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Classifier</span> <span class="keyword">extends</span> <span class="title">Learner</span>&lt;<span class="title">Example</span>&lt;<span class="title">Instance</span>&gt;&gt; </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接口的声明语法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">[可见度] interface 接口名称 [extends 其他的接口名] &#123;</span><br><span class="line">        <span class="comment">// 成员变量(只能是public static final类型的)</span></span><br><span class="line">        <span class="comment">// 抽象方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<p>1、接口的继承</p>
+<blockquote>
+<p>一个接口能继承另一个接口，和类之间的继承方式比较相似。接口的继承使用extends关键字，子接口继承父接口的方法。</p>
+</blockquote>
+<p>2、接口的多继承</p>
+<blockquote>
+<p>在Java中，类的多继承是不合法，但接口允许多继承。</p>
+<p>在接口的多继承中extends关键字只需要使用一次，在其后跟着继承接口。示例如下：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Hockey</span> <span class="keyword">extends</span> <span class="title">Sports</span>, <span class="title">Event</span></span>&#123;</span><br><span class="line">        <span class="comment">// 成员变量(只能是public static final类型的)</span></span><br><span class="line">        <span class="comment">// 抽象方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>更多见：<a href="https://www.runoob.com/java/java-interfaces.html">Java接口 | 菜鸟教程</a></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>MOA</category>
+        <category>分类</category>
+      </categories>
+      <tags>
+        <tag>MOA</tag>
+        <tag>分类</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>04(中等)：二维数组中的查找</title>
     <url>/posts/11740849.html</url>
     <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>04：<a href="https://leetcode-cn.com/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/">二维数组中的查找</a></p>
@@ -593,39 +631,6 @@
         <tag>《剑指offer》（第2版）</tag>
         <tag>中等</tag>
         <tag>数组</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MOA：moa.classifiers-AbstractClassifier.java</title>
-    <url>/posts/35ddf947.html</url>
-    <content><![CDATA[<h2 id="顶层结构"><a href="#顶层结构" class="headerlink" title="顶层结构"></a>顶层结构</h2><blockquote>
-<p>AbstractClassifier抽象类</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="继承的类"><a href="#继承的类" class="headerlink" title="继承的类"></a>继承的类</h2><h2 id="实现的接口"><a href="#实现的接口" class="headerlink" title="实现的接口"></a>实现的接口</h2><blockquote>
-<p>CapabilitiesHandler接口：检查数据集的合规性</p>
-<p>Classifier接口：关键接口</p>
-</blockquote>
-<h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><h3 id="Java接口"><a href="#Java接口" class="headerlink" title="Java接口"></a>Java接口</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Classifier</span> <span class="keyword">extends</span> <span class="title">Learner</span>&lt;<span class="title">Example</span>&lt;<span class="title">Instance</span>&gt;&gt; </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>接口的声明语法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">[可见度] interface 接口名称 [extends 其他的接口名] &#123;</span><br><span class="line">        <span class="comment">// 成员变量(只能是public static final类型的)</span></span><br><span class="line">        <span class="comment">// 抽象方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：</p>
-<p>1、接口的继承</p>
-<blockquote>
-<p>一个接口能继承另一个接口，和类之间的继承方式比较相似。接口的继承使用extends关键字，子接口继承父接口的方法。</p>
-</blockquote>
-<p>2、接口的多继承</p>
-<blockquote>
-<p>在Java中，类的多继承是不合法，但接口允许多继承。</p>
-<p>在接口的多继承中extends关键字只需要使用一次，在其后跟着继承接口。示例如下：</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Hockey</span> <span class="keyword">extends</span> <span class="title">Sports</span>, <span class="title">Event</span></span>&#123;</span><br><span class="line">        <span class="comment">// 成员变量(只能是public static final类型的)</span></span><br><span class="line">        <span class="comment">// 抽象方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>更多见：<a href="https://www.runoob.com/java/java-interfaces.html">Java接口 | 菜鸟教程</a></p>
-]]></content>
-      <tags>
-        <tag>MOA</tag>
-        <tag>分类</tag>
       </tags>
   </entry>
 </search>
