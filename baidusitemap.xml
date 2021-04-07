@@ -1,48 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/posts/ffba58c5.html</loc>
+    <lastmod>2021-04-07</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/cba86e7b.html</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/701a824e.html</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/5c46b517.html</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/3af126c2.html</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/218fb600.html</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/1eaa0f0b.html</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/d23265fa.html</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/c19aac04.html</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/11740849.html</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/posts/c0483027.html</loc>
+    <lastmod>2021-04-02</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/posts/35ddf947.html</loc>
     <lastmod>2021-03-30</lastmod>
   </url>
   <url>
-    <loc>http://example.com/posts/11740849.html</loc>
-    <lastmod>2021-03-30</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/posts/3af126c2.html</loc>
-    <lastmod>2021-03-29</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/posts/218fb600.html</loc>
-    <lastmod>2021-03-28</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/posts/d23265fa.html</loc>
-    <lastmod>2021-03-26</lastmod>
-  </url>
-  <url>
     <loc>http://example.com/posts/af530ec4.html</loc>
     <lastmod>2021-03-26</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/posts/c0483027.html</loc>
-    <lastmod>2021-03-24</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/posts/5c46b517.html</loc>
-    <lastmod>2021-03-24</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/posts/701a824e.html</loc>
-    <lastmod>2021-03-23</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/posts/c19aac04.html</loc>
-    <lastmod>2021-03-17</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/posts/1eaa0f0b.html</loc>
-    <lastmod>2021-03-16</lastmod>
   </url>
   <url>
     <loc>http://example.com/posts/54b0646e.html</loc>
